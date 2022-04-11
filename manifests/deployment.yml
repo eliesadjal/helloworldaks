@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "backstageaks-8d3a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "backstageaks-8d3a"
+  template:
+    metadata:
+      labels:
+        app: "backstageaks-8d3a"
+    spec:
+      containers:
+        - name: "backstageaks-8d3a"
+          image: "newacrkube.azurecr.io/backstageaks"
+          ports:
+          - containerPort: 80
